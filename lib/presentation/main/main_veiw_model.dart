@@ -5,7 +5,7 @@ import 'package:wather_app/domain/model/weather_info.dart';
 
 class MainViewModel extends ChangeNotifier {
   final WeatherApi  _api = WeatherApi();
-  late final WeatherRepositoryImpl impl;
+  late  WeatherRepositoryImpl impl;
    WeatherInfo?  weatherData;
 
   Future<void> getRead(num lat , num long) async{
