@@ -15,7 +15,7 @@ class _MainScreenState extends State<MainScreen> {
     super.initState();
     Future.microtask(() {
       final viewModel = context.read<MainViewModel>();
-      viewModel.getRead(22.0,4.0).then(
+      viewModel.getRead(127.0286009,37.2635727).then(
             (value) => setState(() {}),
           );
     });
@@ -27,13 +27,13 @@ class _MainScreenState extends State<MainScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(''),
+        title: const Text('날씨 정보앱'),
       ),
       body: Center(
         child: Column(
           children: [
-            Text(viewModel.weatherData?.latitude.toString() ?? ''),
-            Text(viewModel.weatherData?.longitude.toString() ?? ''),
+            Text('위도:${viewModel.weatherData?.latitude ?? ''}'),
+            Text('경도:${viewModel.weatherData?.longitude ?? ''}'),
             Text('온도 :${viewModel.weatherData?.hourly.temperature2m.toString() ?? ''}°C'),
             Text('상대습도 :${viewModel.weatherData?.hourly.relativeHumidity2m.toString() ?? ''}%'),
             Text('풍속 :${viewModel.weatherData?.hourly.windSpeed10m.toString() ?? ''}km/h(mph)'),
