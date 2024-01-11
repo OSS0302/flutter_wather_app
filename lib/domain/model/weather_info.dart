@@ -21,7 +21,12 @@ class WeatherInfo {
     required this.hourly,
   });
 
-  factory WeatherInfo.fromJson(Map<String, dynamic> json) {
+   @override
+  String toString() {
+    return 'WeatherInfo{latitude: $latitude, longitude: $longitude, generationTimeMs: $generationTimeMs, utcOffsetSeconds: $utcOffsetSeconds, timezone: $timezone, timezoneAbbreviation: $timezoneAbbreviation, elevation: $elevation, hourlyUnits: $hourlyUnits, hourly: $hourly}';
+  }
+
+   factory WeatherInfo.fromJson(Map<String, dynamic> json) {
     return WeatherInfo(
       latitude: json['latitude'],
       longitude: json['longitude'],
